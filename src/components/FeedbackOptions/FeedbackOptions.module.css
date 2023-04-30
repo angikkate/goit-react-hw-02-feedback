@@ -1,0 +1,25 @@
+.optionsList {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+  
+.button {
+  margin: 15px auto;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 5px;
+  min-width: 100px;
+  min-height: 45px;
+  font-weight: 500;
+  font-size: 18px;
+  background-color: rgb(134, 15, 245);
+  box-shadow: rgba(109, 12, 212, 0.8) 0px 5px 10px;
+  color: rgb(16, 24, 10);
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.button:active {
+  filter: brightness(70%);
+}

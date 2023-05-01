@@ -9,14 +9,12 @@ export class App extends Component {
     good: 0,
     neutral: 0,
     bad: 0,
-    visible: false,
   };
 
   handleClickFeedback = (e) => {
     const value = e.toLowerCase();
     this.setState((prevState) => ({
       [value]: prevState[value] + 1,
-      visible: true,
     }));
   };
 
@@ -39,12 +37,13 @@ export class App extends Component {
       <div className='container'>
         <Section title={'Please leave feedback'}>
           <FeedbackOptions 
-          options={['Good', 'Neutral', 'Bad']}
+          options={Object.keys(this.state)}
+          // options={['Good', 'Neutral', 'Bad']}
           onLeaveFeedback={this.handleClickFeedback}
           />
         </Section>
         <Section title="Statistics">
-            { visible ?
+            { countTotalFeedback ?
               <Statistics
                 good={good}
                 neutral={neutral}
